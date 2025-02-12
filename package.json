@@ -1,9 +1,13 @@
 {
   "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express-session": "^1.18.1",
     "@types/jest": "^29.5.14",
     "@types/pg": "^8.11.11",
+    "@types/pg-format": "^1.0.5",
     "husky": "^9.1.7",
     "jest": "^29.7.0",
+    "pg-format": "^1.0.4",
     "ts-jest": "^29.2.5",
     "typescript": "^5.7.3"
   },
@@ -28,8 +32,10 @@
   "homepage": "https://github.com/pseheya/bc-digital-diary#readme",
   "description": "",
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
+    "express-session": "^1.18.1",
     "pg": "^8.13.2"
   }
 }
