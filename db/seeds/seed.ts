@@ -1,3 +1,6 @@
+import dotenv from "dotenv";
+dotenv.config({ path: ".env.test" });
+
 import db from "../connection";
 import { SeedData } from "../../utilities/types";
 import setupTables from "./seedUtilities.ts/setUpTables";
@@ -17,6 +20,9 @@ const seed = async ({
     await db.query("DROP TABLE IF EXISTS to_do, notes, days, users CASCADE;");
     await setupTables();
 
+    console.log("Truncating users table...");
+    await db.query("TRUNCATE TABLE users RESTART IDENTITY CASCADE;");
+
     console.log("Inserting tables");
     await insertUsers(userData);
     await insertDays(dayData);
@@ -26,7 +32,9 @@ const seed = async ({
     console.error("Error seeding database:", error);
     throw error;
   } finally {
-    db.end();
+    process.on("exit", () => {
+      db.end();
+    });
   }
 };
 

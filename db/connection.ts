@@ -1,23 +1,18 @@
-import { Pool, PoolConfig } from "pg";
 import dotenv from "dotenv";
-const ENV = process.env.NODE_ENV || "development";
 
-dotenv.config({
-  path: `${__dirname}/../.env.${ENV}`,
+const envFile = process.env.NODE_ENV === "test" ? ".env.test" : ".env";
+dotenv.config({ path: envFile });
+
+console.log("PGDATABASE:", process.env.PGDATABASE);
+
+import { Pool } from "pg";
+
+const db = new Pool({
+  database: process.env.PGDATABASE,
+  user: process.env.PGUSER,
+  password: process.env.PGPASSWORD,
+  host: process.env.PGHOST || "localhost",
+  port: Number(process.env.PGPORT) || 5432,
 });
-
-if (!process.env.PGDATABASE && !process.env.DATABASE_URL) {
-  throw new Error("PGDATABASE or DATABASE_URL not set");
-}
-
-const config: PoolConfig =
-  ENV === "production"
-    ? {
-        connectionString: process.env.DATABASE_URL as string,
-        max: 2,
-      }
-    : {};
-
-const db = new Pool(config);
 
 export default db;

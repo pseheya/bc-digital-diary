@@ -4,9 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
-    "prepare": "chmod +x .husky/*",
-    "setup-dbs": "psql -f ./db/setup.sql"
+    "setup-dbs": "psql -f ./db/setup.sql",
+    "test": "NODE_ENV=test jest"
   },
   "jest": {
     "preset": "ts-jest",
@@ -42,6 +41,7 @@
     "pg": "^8.13.3",
     "pg-format": "^1.0.4",
     "ts-jest": "^29.2.5",
+    "ts-node": "^10.9.2",
     "typescript": "^5.7.3"
   }
 }
