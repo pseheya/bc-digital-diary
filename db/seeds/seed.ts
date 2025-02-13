@@ -20,9 +20,6 @@ const seed = async ({
     await db.query("DROP TABLE IF EXISTS to_do, notes, days, users CASCADE;");
     await setupTables();
 
-    console.log("Truncating users table...");
-    await db.query("TRUNCATE TABLE users RESTART IDENTITY CASCADE;");
-
     console.log("Inserting tables");
     await insertUsers(userData);
     await insertDays(dayData);

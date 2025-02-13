@@ -12,10 +12,10 @@ export const userData = [
     password: "bob_983",
   },
   {
-    username: "bobS",
-    name: "Bob Smith",
-    email: "bob@email.com",
-    password: "bob_983",
+    username: "kallen",
+    name: "Kallen Smith",
+    email: "kallen@email.com",
+    password: "kallen_832",
   },
   {
     username: "charlieB",
