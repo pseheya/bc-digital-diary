@@ -4,7 +4,7 @@ import argon2 from "argon2";
 export const hashPassword = async (password: string): Promise<string> => {
   try {
     const hashedPassword = await argon2.hash(password, {
-      type: argon2.argon2id,
+      type: argon2.argon2id as unknown as number,
       memoryCost: 2 ** 16,
       timeCost: 3,
       parallelism: 1,

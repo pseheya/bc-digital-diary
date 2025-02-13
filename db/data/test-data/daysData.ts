@@ -1,4 +1,4 @@
-module.exports = [
+export const dayData = [
   { day: "Monday" },
   { day: "Tuesday" },
   { day: "Wednesday" },

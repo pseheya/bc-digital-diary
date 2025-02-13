@@ -22,14 +22,7 @@ export type ToDo = {
 };
 
 export type Days = {
-  day:
-    | "Monday"
-    | "Tuesday"
-    | "Wednesday"
-    | "Thursday"
-    | "Friday"
-    | "Saturday"
-    | "Sunday";
+  day: string;
 };
 
 export type SeedData = {

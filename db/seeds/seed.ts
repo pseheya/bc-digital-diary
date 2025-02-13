@@ -29,3 +29,5 @@ const seed = async ({
     db.end();
   }
 };
+
+export default seed;
