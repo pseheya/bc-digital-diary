@@ -1,6 +1,6 @@
 import db from "../../connection";
 import format from "pg-format";
-import { UserData } from "../../../utilities/types";
+import { UserData } from "../../../element/(user)/userUtilities.ts/userTypes";
 
 const insertUsers = async (userData: UserData[]) => {
   if (userData.length === 0) return;

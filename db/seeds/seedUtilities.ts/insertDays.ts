@@ -1,6 +1,6 @@
 import db from "../../connection";
 import format from "pg-format";
-import { Days } from "../../../utilities/types";
+import { Days } from "../../../element/(days)/daysUtilities/daysType";
 
 const insertDays = async (dayData: Days[]) => {
   if (dayData.length === 0) return;

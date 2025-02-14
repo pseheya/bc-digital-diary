@@ -2,10 +2,14 @@ import express from "express";
 import session from "express-session";
 import cors from "cors";
 import { randomSessionSecret } from "./utilities/random-session-key";
+import { authorizedUser } from "./element/(user)/userController";
+import { checkAuthorisedUser } from "./element/(user)/userRoute";
 
 const app = express();
 const sessionSecret = process.env.SESSION_SECRET || randomSessionSecret();
 const store = new session.MemoryStore();
+
+app.use(express.json());
 
 app.use(
   session({
@@ -18,6 +22,10 @@ app.use(
 );
 app.use(cors());
 
+app.get("/protected", authorizedUser, checkAuthorisedUser);
+
 app.listen(3000, () => {
   console.log("Server running on port 3000");
 });
+
+export default app;

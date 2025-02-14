@@ -1,6 +1,6 @@
 import db from "../../connection";
 import format from "pg-format";
-import { NoteData } from "../../../utilities/types";
+import { NoteData } from "../../../element/(notes)/notesUtils.ts/notesType";
 
 const insertNotes = async (notesData: NoteData[]) => {
   if (notesData.length === 0) return;

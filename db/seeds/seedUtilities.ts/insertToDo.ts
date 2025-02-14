@@ -1,6 +1,6 @@
 import db from "../../connection";
 import format from "pg-format";
-import { ToDo } from "../../../utilities/types";
+import { ToDo } from "../../../element/(toDo)/toDoUtilities/toDoType";
 
 const insertToDo = async (toDoData: ToDo[]) => {
   if (toDoData.length === 0) return;

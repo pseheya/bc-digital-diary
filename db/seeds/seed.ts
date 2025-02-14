@@ -2,7 +2,7 @@ import dotenv from "dotenv";
 dotenv.config({ path: ".env.test" });
 
 import db from "../connection";
-import { SeedData } from "../../utilities/types";
+import { SeedData } from "../../element/generalTypes";
 import setupTables from "./seedUtilities.ts/setUpTables";
 import insertUsers from "./seedUtilities.ts/insertUserData";
 import insertDays from "./seedUtilities.ts/insertDays";
